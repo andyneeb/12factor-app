@@ -1,0 +1,1 @@
+oc exec -it `oc get pods -l app=mysql |grep mysql| awk '{ print $1 }'` -- bash -c "mysql -umyuser -pmypassword -h 127.0.0.1 mydatabase -te \"CREATE TABLE mytable (name varchar(50)); INSERT INTO mytable VALUES ('Andreas'); INSERT INTO mytable VALUES ('Neeb');\""
