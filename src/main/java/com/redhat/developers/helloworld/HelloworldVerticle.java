@@ -78,7 +78,7 @@ public class HelloworldVerticle extends AbstractVerticle {
         // root endpoint
         router.get("/").handler(ctx -> {
             ctx.response().putHeader("content-type", "text/html");
-            ctx.response().end("<a href='/api/hello/:name'</a>/api/hello/:name<br>");
+            ctx.response().end("<a href='/api/hello/:name'</a>/api/hello/:name<br><a href='/api/db'</a>/api/db<br>");
         });
 
         vertx.createHttpServer().requestHandler(router::accept).listen(8080);
